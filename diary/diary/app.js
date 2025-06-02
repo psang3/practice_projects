@@ -1,10 +1,9 @@
+const http = require('http');
 
-const fs = require('fs');
-
-fs.readFile('seventh-grade.txt', 'utf8', (err, data) => {
-  if (err) {
-    console.error("Error reading file", err);
-    return;
-  }
-  console.log(data);
+// Create a server object
+const server = http.createServer((request, response) => {
+  response.write('Hello World!');
+  response.end();
 });
+
+server.listen(3000);
