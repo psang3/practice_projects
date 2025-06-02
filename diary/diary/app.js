@@ -1,9 +1,14 @@
 const http = require('http');
 
-// Create a server object
+// Variable goes here 😊
+let count = 0;
+
 const server = http.createServer((request, response) => {
-  response.write('Hello World!');
+  count++;
+  response.write(`You are visitor number ${count}`);
   response.end();
 });
 
-server.listen(3000);
+server.listen(3000, () => {
+  console.log('Visitor Counter running at http://localhost:3000');
+});
